@@ -167,7 +167,6 @@ select {
   width: auto;
   gap: 12px;
   flex-direction: column;
-  width: 380px;
   border-radius: 5px;
   padding: 12px;
   border: 1px solid var(--button);
@@ -191,7 +190,7 @@ select {
 .form-login .icons span {
     position: absolute;
     top: -80%;
-    left: 36%;
+    left: 38%;
     background-color: var(--color);
     height: 100px;
     width: 100px;
@@ -412,7 +411,7 @@ select {
 
 /*»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»» cadastro importdaores »»»»»»»»»»»»»»*/
 
-.cadastro-importadores {
+:is(.cadastro-importadores, .cadastro-exportadores){
     position: relative;
     display: flex;
     align-items: center;
@@ -420,7 +419,6 @@ select {
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .center-form {
@@ -448,7 +446,7 @@ select {
     font-weight: 600;
 }
 
-.cadastro-importadores form {
+:is(.cadastro-importadores, .cadastro-exportadores) form {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -530,9 +528,107 @@ select {
     }
 }
 
-.lista-importadores {
+/*=============================================== Lista de Importadores =======================*/
+
+.Lista-Importadores,.Lista-Exportadores {
     position: relative;
+    display: block;
+    padding: 20px;
+}
+
+.header-section {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 5px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--color);
+}
+
+.header-section h2 {
+    color: var(--color);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.add-btn {
+    background-color: var(--color);
+    color: var(--baseColor);
+    border: none;
+    padding: 16px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: var(--buttonHoverColor);
+    color: var(--buttonHoverTextColor);
+}
+
+.table-container {
+    height: 900px;
+    scrollbar-gutter: stable;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #007bff, #0056b3);
+    border-radius: 10px;
+    border: 2px solid #f0f0f0; /* cria um “respiro” entre track e thumb */
+    transition: all 0.3s ease;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3399ff, #0066cc);
+}
+
+.table-container::-webkit-scrollbar-corner {
+    background: #f0f0f0;
+}
+
+.table-container table {
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color);
+    color: var(--baseColor);
+}
+
+th, td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #eef5ff;
+}
+tbody td:nth-of-type(1){
+    text-align: left;
 }

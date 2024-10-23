@@ -1,4 +1,4 @@
-export default function Cadimportadores() {
+export default function importadores() {
   return (
     `
       <div class="cadastro-importadores">

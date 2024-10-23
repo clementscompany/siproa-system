@@ -1,4 +1,4 @@
-import ListaImportadores from "../../components/du/importadores.js";
+import ListaImportadores from "../../components/importadores/importadores.js";
 class Importadores {
   constructor(mainContainer) {
     this.mainContainer = mainContainer;
