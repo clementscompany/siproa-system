@@ -1,10 +1,9 @@
 import express from "express";
 import cors from "cors";
-import LoginController from "../controller/Login.controller.js";
-import SettingsController from "../controller/Settings.controller.js";
+import { Route } from "../../Routes.js";
 
 const Api = express();
-
+Api.use(Route);
 Api.use(cors({
   methods: ['POST', 'PUT', 'GET', 'PATCH', 'OPTIONS'],
   credentials: true,

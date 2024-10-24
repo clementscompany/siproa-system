@@ -1,5 +1,7 @@
+import { Modal } from "../../components/modal/Modal.js";
 import ConfiguracaoInicial from "../../components/wellcome/settings.js";
 import template from "../../components/wellcome/Wellcome.js";
+import { ValidateInput } from "../../utils/ValidateInput.js";
 
 class WellCome {
   constructor(mainContainer) {
@@ -15,26 +17,55 @@ class WellCome {
 
   settings(mainContainer) {
     mainContainer.querySelector(".wellcomePage").innerHTML = ConfiguracaoInicial();
-    const tabHandler = (e) => {
+    const form = mainContainer.querySelector("#formConfiguracao");
+    const steps = form.querySelectorAll(".step");
+    const nextBtn = form.querySelector(".btn-next");
+    const prevBtn = form.querySelector(".btn-prev");
+    const saveBtn = form.querySelector(".btn-save");
+    const cancelBtn = form.querySelector("#closeButton");
 
-      const closeButton = e.target.closest("#closeButton");
-      if (closeButton) {
-        this.Init(mainContainer);
+    const modalContainer = new Modal(mainContainer);
+
+    let currentStep = 0;
+
+    const updateStep = () => {
+      steps.forEach((s, i) => s.classList.toggle("active", i === currentStep));
+      prevBtn.style.display = currentStep > 0 ? "inline-block" : "none";
+      nextBtn.style.display = currentStep < steps.length - 1 ? "inline-block" : "none";
+      saveBtn.classList.toggle("hidden", currentStep !== steps.length - 1);
+    };
+
+    nextBtn.addEventListener("click", () => {
+      const currentStepElement = steps[currentStep];
+      const inputs = currentStepElement.querySelectorAll("input, select, textarea");
+      let isValid = ValidateInput(inputs);
+
+      if (!isValid) {
+        modalContainer.showError("Preencha todos os Campos", "Erro de validação");
         return;
       }
 
-      const target = e.target.closest(".tab");
-      if (!target) return;
-      const tabs = mainContainer.querySelectorAll(".tab");
-      const contents = mainContainer.querySelectorAll(".tab-content");
-      tabs.forEach(tab => tab.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
-      target.classList.add("active");
-      const tabId = target.dataset.tab;
-      mainContainer.querySelector(`#${tabId}`).classList.add("active");
-    };
+      if (currentStep < steps.length - 1) currentStep++;
+      updateStep();
+    });
 
-    mainContainer.addEventListener("click", tabHandler);
+    prevBtn.addEventListener("click", () => {
+      if (currentStep > 0) currentStep--;
+      updateStep();
+    });
+
+    cancelBtn.addEventListener("click", () => this.Init(mainContainer));
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      
+      modalContainer.showLoader();
+      console.log(data);
+      
+    });
+
+    updateStep();
   }
 }
 
