@@ -884,36 +884,54 @@ tbody td:nth-of-type(1){
   gap: 15px;
 }
 
-.center-form-Process h1 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 8px;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 5px;
+.top-options-process{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
 }
 
 .posicoes-group {
   display: flex;
+  align-items: center;
+  justify-content: space-between;  
   flex-wrap: wrap;
   gap: 12px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #007bff;
+  padding:5px 0;
+}
+
+.posicoes-group h1{
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+.options-edit-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btn-agrupar-posicoes,
 .btn-abrir-adicoes,
 .btn-salvar {
-  background-color: #007bff;
+  background-color: var(--color);
   color: white;
+  font-weight: 600;
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
   font-weight: 500;
-  cursor: pointer;
   transition: background 0.3s;
 }
 
 .btn-agrupar-posicoes:hover,
 .btn-abrir-adicoes:hover,
 .btn-salvar:hover {
+  color: var(--baseColor);
   background-color: #0056b3;
 }
 
@@ -923,65 +941,96 @@ tbody td:nth-of-type(1){
   align-items: center;
   gap: 15px;
   justify-content: space-between;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #007bff;
+  padding:5px 0;
+}
+
+.group-adicoes button:nth-of-type(1){
+  background-color: var(--color);
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  margin-left: 4px;
+  width: 200px;
+}
+
+.group-adicoes button:nth-of-type(1):hover{
+  color: var(--baseColor);
+  background-color: #0056b3;
+}
+
+.group-adicoes button:nth-of-type(2){
+  background-color: orange;
+  padding: 12px;
+  border-radius: 4px;
+  color: var(--baseColor);
+  font-weight: 500;
+  border: none;
+  margin-left: 4px;
+  width: 200px;
 }
 
 .valoresAduaneiro {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   flex-wrap: wrap;
+  padding: 6px;
 }
 
-.inforAduaneiro {
-  display: flex;
-  flex-direction: column;
-  background: #eef4ff;
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-.inforAduaneiro label {
-  color: #333;
+.valoresAduaneiro label{
+  color: var(--color);
   font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 1em;
+}
+
+.valoresAduaneiro span{
+  font-size: 15px;
+  padding: 4px 6px;
+  margin-left: 4px;
+  border-radius: 4px;
+  color: var(--baseColor);
+  background: var(--textColor2);
 }
 
 /* ======== FORM ======== */
 #exportersForm{
+  position: relative;
     height: 800px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 .grid-frist-block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  border: 1px solid var(--color);
 }
 
-/* Grupos de input */
 .form-group-process {
   display: flex;
   flex-direction: column;
 }
 
-.form-group-process label {
+#exportersForm .form-group-process label {
   font-size: 1rem;
-  color: #444;
+  color: var(--color);
   margin-bottom: 6px;
   font-weight: 600;
   font-family: "Gill Sans", "Segoe UI", sans-serif;
 }
 
-.form-group-process input,
-.form-group-process select {
-  padding: 10px 12px;
+#exportersForm .form-group-process input,
+#exportersForm .form-group-process select {
+  padding: 10px 13px;
   font-size: 0.95rem;
   border: 1.6px solid #ccc;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   transition: 0.3s;
   background-color: #f9f9f9;
@@ -994,28 +1043,21 @@ tbody td:nth-of-type(1){
   box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
 }
 
-/* Responsividade extra */
-@media (max-width: 768px) {
-  .grid-frist-block {
-    grid-template-columns: 1fr;
-    padding: 18px;
-  }
-}
-
 .grid-import-export {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 26px;
   margin-top: 20px;
 }
 
 .form-group-process-importador,
 .form-group-process-exportador {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--color);
 }
 
 .form-group-process-importador h3,
@@ -1025,6 +1067,12 @@ tbody td:nth-of-type(1){
   color: #004aad;
   border-bottom: 2px solid #004aad;
   padding-bottom: 5px;
+}
+
+.bottom-div-process{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 5px;
 }
 
 .form-group-process {
@@ -1057,8 +1105,8 @@ tbody td:nth-of-type(1){
 .form-actions {
   display: flex;
   justify-content: flex-start ;
-  margin-top: 10px;
-  position: sticky;
+  margin:10px 0;
+  position: relative;
   bottom: 0;
   padding-top: 10px;
 }
@@ -1072,11 +1120,17 @@ tbody td:nth-of-type(1){
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
   transition: background 0.3s;
 }
 
-.btn-salvar i:hover{
+.btn-salvar :hover{
   background-color: var(--button);
   color: var(--baseColor);
+}
+
+@media (max-width: 768px) {
+  .grid-frist-block {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
 }

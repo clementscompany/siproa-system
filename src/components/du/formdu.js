@@ -2,25 +2,21 @@ export default function formDu(){
     return`
         <div class="criar-processo">
                 <div class="center-form-Process">
-                    <h1>Criar Processo</h1>
-                     <div class="posicoes-group">
+                    <div class="posicoes-group">
+                        <h1>Criar Processo</h1>
+                        <div class="left-top-process">
                         <button class="btn-agrupar-posicoes">Agrupar Posições</button>
                         <button class="btn-agrupar-posicoes">Ver Posições Agrupadas</button>
-                    </div>   
+                        </div>
+                    </div>
                     <div class="group-adicoes">
-                         <button class="btn-abrir-adicoes">Adicões</button>
+                        <div class="options-edit-action"><button class="btn-abrir-adicoes">Adicões</button><button class="btn-abrir-">Editar</button></div>
                         <div class="valoresAduaneiro">
-                            <div class="inforAdunaneiro">
-                            <label for="paisExp">Valor Aduaneiro</label>
-                            <span class="">xxxxxxxxxxxxxxxxxx</span>
-                            </div>
-                            <div class="inforAdunaneiro">
-                             <label for="paisExp">Valor a Pagar (DU)</label>
-                             <span class="">xxxxxxxxxxxxxxxxxx</span>
-                            </div>
+                            <div class="inforAdunaneiro"><label for="">Valor Aduaneiro</label><span>0,0000000</span></div>
+                            <div class="inforAdunaneiro"><label for="">Valor a Pagar (DU)</label><span>0,0000000</span></div>   
                        </div>
-                   </div>
-             </div>
+                   </div>   
+                </div>
             <form id="exportersForm">
                 <div class="grid-frist-block">
                 <div class="form-group-process">
@@ -111,7 +107,7 @@ export default function formDu(){
                 <div class="grid-import-export">
                 <div class="form-group-process-importador">
                     <h3>Importador</h3>
-                    <div class="">
+                    <div class="form-group-process">
                     <label for="nomeImport">Nome do Importador</label>
                     <select id="nomeImport">
                         <option value="">Selecione o Importador</option>
@@ -119,6 +115,7 @@ export default function formDu(){
                         <option value="">Moisés Clemente</option>
                     </select>
                     </div>
+                    <div class="bottom-div-process">
                     <div class="form-group-process">
                     <label for="morada">Morada</label>
                     <input type="text" id="morada" placeholder="Ex:000CAA">
@@ -131,10 +128,11 @@ export default function formDu(){
                     <label for="codImport">Codigo Importador/NIF</label>
                     <input type="text" id="codImport" placeholder="Ex:00998889900FF876">
                     </div>
+                    </div>
                 </div>
                 <div class="form-group-process-exportador">
                     <h3>Exportadores</h3>
-                    <div class="">
+                    <div class="form-group-process">
                     <label for="nomeExp">Nome do Exportador</label>
                     <select id="nomeExp">
                         <option value="">Selecione o Exportador</option>
@@ -142,6 +140,7 @@ export default function formDu(){
                         <option value="">João da Cruz Bete</option>
                     </select>
                     </div>
+                    <div class="bottom-div-process">
                     <div class="form-group-process">
                     <label for="codImport">Codigo Importador/NIF</label>
                     <input type="text" id="codImport" placeholder="Ex:00998889900FF876">
@@ -153,6 +152,7 @@ export default function formDu(){
                     <div class="form-group-process">
                      <label for="morada">Morada</label>
                      <input type="text" id="morada" placeholder="Ex:Cidade-País">
+                    </div>
                     </div>
                 </div>
                 </div>
@@ -275,7 +275,7 @@ export default function formDu(){
                 </div>
                 <div class="form-actions">
                     <button class="btn-salvar">
-                        <i class="bi bi-safe">Salvar</i> 
+                        Salvar 
                     </button>
                 </div>
             </div>
