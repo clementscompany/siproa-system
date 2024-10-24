@@ -3,8 +3,9 @@ import LoginPage from "./pages/loginPage/LoginPage.js";
 import Importadores from "./pages/importadores/Importadores.js";
 import ListaDeImportadores from "./pages/listaImportadorees/ListaImportadores.js";
 import Exportadores from "./pages/exportadores/Exportadores.js";
-import Listaexportadores from "./pages/listaExportadores/ListaExportadores.js";
 import ListaDeExportadores from "./pages/listaExportadores/ListaExportadores.js";
+import DocumentoUnico from "./pages/du/DU.js";
+import FormDU from "./pages/du/FormDu.js";
 
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
@@ -42,6 +43,14 @@ export function Route() {
 
     case "/lista_exportadores":
       new ListaDeExportadores(mainContainer);
+      break;
+    
+    case "/processos":
+      new DocumentoUnico(mainContainer);
+      break;
+    
+    case "/formulario_processo":
+      new FormDU(mainContainer);
       break;
     
     default:
