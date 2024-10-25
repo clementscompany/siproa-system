@@ -8,6 +8,7 @@ import DocumentoUnico from "./pages/du/DU.js";
 import FormDU from "./pages/du/FormDu.js";
 import AgruparPosicoes from "./pages/duposicoes/Duposicoes.js";
 import ReqFundos from "./pages/reqfundos/Reqfundos.js";
+import DuAdicoes from "./pages/duAdicoes/DuAdicoes.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -59,6 +60,10 @@ export function Route() {
       
     case"/requisicao_fundos":
      new ReqFundos(mainContainer);
+    break;
+
+    case"/adicoes":
+     new DuAdicoes(mainContainer);
     break;
     default:
 
