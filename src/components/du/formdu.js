@@ -277,6 +277,9 @@ export default function formDu(){
                     <button class="btn-salvar">
                         Salvar 
                     </button>
+                    <button class="btn-cancelar">
+                        Cancelar 
+                    </button>
                 </div>
             </div>
             </form>

@@ -1,7 +1,7 @@
 import { Navigate, Route } from "./src/Routes.js";
 export const mainContainer = document.querySelector("#mainContainer");
 window.addEventListener("DOMContentLoaded", () => {
-  Navigate("/formulario_processo");
+  Navigate("/requisicao_fundos");
   Route();
 });
 window.addEventListener("hashchange", Route);
