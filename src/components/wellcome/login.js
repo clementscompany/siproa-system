@@ -11,27 +11,15 @@ export default function Login() {
                         <option value="admin">admin</option>
                     </select>
                     </div>
-                    <div class="fields">
-                        <label for="">Senha</label>
-                    <input type="password" placeholder="Digete a sua senha" id="password">
-                    <i class="bi bi-eye"></i>
+                    <div class="fields password-field">
+                        <label for="password">Senha</label>
+                        <div class="password-wrapper">
+                            <input type="password" placeholder="Digite a sua senha" id="password" />
+                            <i class="bi bi-eye" id="togglePassword" aria-label="Mostrar senha" role="button"></i>
+                        </div>
                     </div>
-                <button class="botao">Entrar</button>
+                <button class="btnlogin">Entrar</button>
             </form>
-        </div>
-        <div id="popup-erro" class="modal">
-            <div class="modal-content">
-                <h2>Aviso!</h2>
-                <p id="mensagem-erro">Lorem, ipsum dolor.</p>
-                <button id="fecharerro">Fechar</button>
-            </div>
-        </div>
-
-        <div id="popup-sucesso" class="modal">
-            <div class="modal-content-sucess">
-                <h2>Aviso</h2>
-                <p id="mensagemSucesso"></p>
-            </div>
         </div>
         `
   );

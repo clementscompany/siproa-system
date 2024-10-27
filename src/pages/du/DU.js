@@ -1,4 +1,5 @@
 import DU from "../../components/du/du.js";
+import {Modal} from "../../components/modal/Modal.js"
 
 class DocumentoUnico{
     constructor(mainContainer){
@@ -8,24 +9,19 @@ class DocumentoUnico{
 
     Init(mainContainer){
         mainContainer.innerHTML = DU();
-        this.loadModalProcess();
+        this.loadModalProcess(mainContainer);
     }
 
     loadModalProcess(mainContainer){
-        const btnconsulta = this.mainContainer.querySelector("#btn-search");
-        const inputconsulta = this.mainContainer.querySelector(".search-part input[type='text']")
-        const poperrrormodal = this.mainContainer.querySelector("#popup-erro")
-        const mensagemerrormodal = this.mainContainer.querySelector("#mensagem-erro")
-        const closemodalerror = this.mainContainer.querySelector("#fecharerro")
-        
-        closemodalerror.onclick = ()=>{
-            poperrrormodal.style.display = "none"
-        }
+        mainContainer.querySelector(".container-du");
+        const btnconsulta = mainContainer.querySelector("#btn-search");
+        const inputconsulta = mainContainer.querySelector(".search-part input[type='text']")
+        const modalContainer = new Modal(mainContainer);
 
         btnconsulta.onclick = ()=>{
             if(inputconsulta){
-                mensagemerrormodal.textContent = "Digite algo para começar a busca!";
-                poperrrormodal.style.display = "flex";
+                modalContainer.showError("Digite para começar a busca","Aviso!");
+                return;
             }
         }
     }

@@ -9,6 +9,7 @@ import FormDU from "./pages/du/FormDu.js";
 import AgruparPosicoes from "./pages/duposicoes/Duposicoes.js";
 import ReqFundos from "./pages/reqfundos/Reqfundos.js";
 import DuAdicoes from "./pages/duAdicoes/DuAdicoes.js";
+import ArquivosProcessos from "./pages/arquivos/Arquivos.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -64,6 +65,10 @@ export function Route() {
 
     case"/adicoes":
      new DuAdicoes(mainContainer);
+    break;
+
+    case"/arquivos":
+      new ArquivosProcessos(mainContainer);
     break;
     default:
 

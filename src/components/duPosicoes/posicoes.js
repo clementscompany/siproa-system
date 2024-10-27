@@ -27,7 +27,8 @@ export default function agruparPosicoes(){
                             <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    </tbody>
                 </table>
 
                 <div class="btns">
@@ -45,10 +46,12 @@ export default function agruparPosicoes(){
                                 <th>Descrição</th>
                                 <th>Quantidade Total</th>
                                 <th>Total FOB</th>
-                                <th>Ação</th>
+                                <th>Total FOB</th>
+                                <th>Total FOB</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                     <div class="btns">
                         <button id="enviarAgrupadas">Enviar Itens Agrupados</button>

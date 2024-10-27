@@ -2,7 +2,7 @@ export default function ListaImportadores(){
     return`
         <div class="Lista-Importadores">
             <div class="header-section">
-                <h2>Lista de Importadores</h2>
+                <h2><button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>Lista de Importadores</h2>
                 <button class="add-btn" id="openFormBtn">+ Novo Importador</button>
             </div>
          <div class="table-container">

@@ -24,6 +24,8 @@ class FormDU{
             if(!isValid){
                 modalContainer.showError("Preenche todos os campos", "Erro de validação");
                 return;
+            }else{
+                modalContainer.showLoader();
             }
         })
     }

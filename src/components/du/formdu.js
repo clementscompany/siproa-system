@@ -3,7 +3,7 @@ export default function formDu(){
         <div class="criar-processo">
                 <div class="center-form-Process">
                     <div class="posicoes-group">
-                        <h1>Criar Processo</h1>
+                        <h1><button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>Criar Processo</h1>
                         <div class="left-top-process">
                         <button class="btn-agrupar-posicoes">Agrupar Posições</button>
                         <button class="btn-agrupar-posicoes">Ver Posições Agrupadas</button>
