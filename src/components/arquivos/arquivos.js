@@ -24,54 +24,7 @@ export default function arquivosProcessos(){
   </div>
 
   <div class="container-arquivos-tab">
-    <table>
-      <thead>
-        <tr>
-          <th>Processo nº</th>
-          <th>Nome do Cliente / Empresa</th>
-          <th>DU nº</th>
-          <th>Descrição da Mercadoria</th>
-          <th>Data</th>
-          <th>Situação</th>
-          <th>Tempo</th>
-          <th>Arquivos</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>00NNAA</td>
-          <td>Organizações Bete</td>
-          <td>88/KK/987</td>
-          <td>Arroz, Máquinas Cálculadoras</td>
-          <td>20/10/2025</td>
-          <td><span class="status concluido">Concluído</span></td>
-          <td>60d 5h 46m</td>
-          <td><i class="bi bi-file-earmark-text"></i> doc-bete.pdf</td>
-          <td class="acoes">
-            <i class="bi bi-bell" title="Notificar"></i>
-            <i class="bi bi-eye" title="Ver detalhes"></i>
-            <i class="bi bi-trash" title="Excluir"></i>
-            <i class="bi bi-printer" title="Imprimir"></i>
-          </td>
-          <tr>
-          <td>00NNAA</td>
-          <td>Organizações Bete</td>
-          <td>88/KK/987</td>
-          <td>Arroz, Máquinas Cálculadoras</td>
-          <td>20/10/2025</td>
-          <td><span class="status concluido">Concluído</span></td>
-          <td>60d 5h 46m</td>
-          <td><i class="bi bi-file-earmark-text"></i> doc-bete.pdf</td>
-          <td class="acoes">
-            <i class="bi bi-bell" title="Notificar"></i>
-            <i class="bi bi-eye" title="Ver detalhes"></i>
-            <i class="bi bi-trash" title="Excluir"></i>
-            <i class="bi bi-printer" title="Imprimir"></i>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    
   </div>
 </div>
     `;
