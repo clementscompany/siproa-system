@@ -11,6 +11,7 @@ import AgruparPosicoes from "./pages/duposicoes/Duposicoes.js";
 import ReqFundos from "./pages/reqfundos/Reqfundos.js";
 import DuAdicoes from "./pages/duAdicoes/DuAdicoes.js";
 import ArquivosProcessos from "./pages/arquivos/Arquivos.js";
+import ListaPaises from "./pages/paises/PaisesTable.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -58,6 +59,9 @@ export function Route() {
       break;
     case"/posicoes":
       new AgruparPosicoes(mainContainer);
+      break;
+    case"/paises":
+      new ListaPaises(mainContainer);
       break;
       
     case"/requisicao_fundos":
