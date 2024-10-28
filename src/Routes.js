@@ -1,5 +1,6 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
 import LoginPage from "./pages/loginPage/LoginPage.js";
+import HomePage from "./pages/homepage/HomePage.js";
 import Importadores from "./pages/importadores/Importadores.js";
 import ListaDeImportadores from "./pages/listaImportadorees/ListaImportadores.js";
 import Exportadores from "./pages/exportadores/Exportadores.js";
@@ -25,7 +26,7 @@ export function Route() {
       break;
 
     case "/home":
-
+      new HomePage(mainContainer);
       break;
 
     case "/login":
