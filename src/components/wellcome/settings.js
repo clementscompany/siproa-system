@@ -93,7 +93,7 @@ export default function ConfigSetup() {
 
     <div class="footer">
       <button class="btn-save"><i class="bi bi-save"></i> Salvar</button>
-      <button class="btn-cancel"><i class="bi bi-x-circle"></i> Cancelar</button>
+      <button class="btn-cancel" id="closeButton"><i class="bi bi-x-circle"></i> Cancelar</button>
     </div>
   </div>
   `
