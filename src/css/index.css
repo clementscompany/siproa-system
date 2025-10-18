@@ -1,0 +1,99 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  cursor: default;
+}
+:root {
+  --baseColor: #ffffff; 
+  --baseColorSoft: #f0f8ff; 
+  --baseColorMuted: #e6f2ff; 
+  --border: #b3d9ff; 
+  --borderColor: #b3d9ff50; 
+  --textColor: #003366; 
+  --textColor2: #336699; 
+  --link: #004080;
+  --card: #ffffff; 
+  --cardColorHover: #e6f2ff; 
+  --modal: #ffffffd9; 
+  --colorButton: #ffffff;
+  --buttonBorderColor: #99ccff;
+  --buttonHoverColor: #cce5ff; 
+  --buttonHoverTextColor: #003366;
+  --buttonHoverBorderColor: #80bfff;
+  --button:#0066cc;
+  --hoverButton:#0052a3;
+  --color: #0066cc; 
+  --outline:#0066cc50;
+  --error: #d9534f; 
+  --success:#28a745;
+  --day:rgb(255, 200, 100);
+}
+
+[theme-system="darck"] {
+  --baseColor: #001a33;
+  --baseColorSoft: #002244;
+  --baseColorMuted: #003355;
+  --border: #00447738;
+  --textColor: #e6f2ff;
+  --textColorMuted: #b3d9ff99;
+  --link: #80bfff61;
+  --card: #002244;
+  --cardColorHover: #003366;
+  --button: #004080;
+  --modal: #000033b4;
+  --colorButton: #e6f2ff;
+  --buttonBorderColor: transparent;
+  --buttonHoverColor: #0055aa;
+  --buttonHoverTextColor: rgba(230, 242, 255, 0.86);
+  --buttonHoverBorderColor: transparent;
+  --color: #4da6ff;
+  --error: #ff6666fb;
+}
+
+body {
+  background: var(--baseColor);
+  color: var(--textColor);
+}
+button{
+  &:hover{
+    color: var(--color);
+    i{
+      color: var(--color);
+    }
+  }
+}
+@keyframes spinner {
+  from{
+    transform: rotate(0);
+  } to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes cammingRigth {
+  from{
+    transform: translateX(22px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes bownce {
+  from{
+    transform: scale(.1);
+  } to{
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+  } to{
+    opacity: 1;
+  }
+}

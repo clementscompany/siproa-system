@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+  script-src 'self'; 
+  style-src 'self' 'unsafe-inline'; 
+  connect-src 'self' http://localhost:3000">
+<link rel="stylesheet" href="">
+<link href="./src/css/App.css" rel="stylesheet">
+<link rel="stylesheet" href="./src/assets/icons/bootstrap/font/bootstrap-icons.css">
+<title>Sistema de Gestão</title>
+</head>
+<main id="mainContainer">
+    <div class="wellcomePage">
+      <div class="content">
+        <div class="logo">
+          <img src="./src/assets/logo.png" alt="logo">
+        </div>
+        <div class="title">
+          <h1>Sistema de Gestão</h1>
+        </div>
+        <!-- Botao para configuracao inicial do sistema -->
+        <div class="btn-container">
+          <button class="startButton">Configuração Inicial</button>
+        </div>
+      </div>
+    </div>
+</main>
+<body>
+  <script src="./renderer.js" type="module"></script> 
+</body>
+</html>
