@@ -1,5 +1,5 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
-
+import LoginPage from "./pages/loginPage/LoginPage.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -17,11 +17,11 @@ export function Route() {
       break;
 
     case "/login":
-
+      new LoginPage(mainContainer)
       break;
 
     case "/vendas":
-      new Vendas(mainContainer);
+      Vendas(mainContainer)
       break;
     default:
 
