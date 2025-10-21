@@ -1,5 +1,6 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
 import LoginPage from "./pages/loginPage/LoginPage.js";
+import CadastroImportadores from "./pages/cadImportadores/cad_Importadores.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -18,6 +19,10 @@ export function Route() {
 
     case "/login":
       new LoginPage(mainContainer)
+      break;
+
+    case "/cadastro_importadores":
+      new CadastroImportadores(mainContainer);
       break;
 
     case "/vendas":

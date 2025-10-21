@@ -4,13 +4,18 @@ export default function Login() {
         <div class="login-page" id="login">
             <form action="" class="form-login">
                 <div class="icons"><span><i class="bi bi-person"></i></span><h1>Login</h1></div>
-                    <label for="">Usuario</label>
+                    <div class="fields">
+                        <label for="">Usuario</label>
                     <select id="username">
                         <option value="">Selecione um utilizador </option>
                         <option value="admin">admin</option>
                     </select>
-                    <label for="">Senha</label>
+                    </div>
+                    <div class="fields">
+                        <label for="">Senha</label>
                     <input type="password" placeholder="Digete a sua senha" id="password">
+                    <i class="bi bi-eye"></i>
+                    </div>
                 <button class="botao">Entrar</button>
             </form>
         </div>
