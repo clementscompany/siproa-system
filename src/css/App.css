@@ -275,7 +275,7 @@ select {
 }
 
 .modal-content {
-  background: #fff;
+  background: var(--baseColor);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -289,8 +289,8 @@ select {
 }
 
 .modal-content p {
-  color: #ffff;
-  background: #dd0d0dbb;
+  color: var(--baseColor);
+  background: var(--error);
   padding: 10px;
   border-radius: 6px;
   font-family: monospace;
@@ -300,8 +300,8 @@ select {
   margin-top: 15px;
   padding: 8px 15px;
   border: none;
-  background: #e90d0d;
-  color: #fff;
+  background: #f71414;
+  color: var(--baseColor);
   border-radius: 6px;
   cursor: pointer;
 }
@@ -339,7 +339,7 @@ select {
 }
 
 .modal-content-sucess {
-  background: #fff;
+  background: var(--baseColor);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -352,7 +352,7 @@ select {
 }
 
 .modal-content-sucess p {
-  color: #ffffff;
+  color: var(--baseColor);
   background: #2fc10b;
   padding: 10px;
   border-radius: 6px;

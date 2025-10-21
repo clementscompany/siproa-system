@@ -5,13 +5,13 @@ export default function Login() {
             <form action="" class="form-login">
                 <div class="icons"><span><i class="bi bi-person"></i></span><h1>Login</h1></div>
                     <label for="">Usuario</label>
-                    <select id="username" required>
+                    <select id="username">
                         <option value="">Selecione um utilizador </option>
                         <option value="admin">admin</option>
                     </select>
                     <label for="">Senha</label>
-                    <input type="password" placeholder="Digete a sua senha">
-                <button type="" class="botao">Entrar</button>
+                    <input type="password" placeholder="Digete a sua senha" id="password">
+                <button class="botao">Entrar</button>
             </form>
         </div>
         <div id="popup-erro" class="modal">
