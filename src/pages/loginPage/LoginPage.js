@@ -9,5 +9,6 @@ class LoginPage {
   Init(mainContainer) {
     mainContainer.innerHTML = Login();
   }
+  
 }
 export default LoginPage;
