@@ -1,6 +1,6 @@
 export default function Cadimportadores() {
-    return (
-        `
+  return (
+    `
       <div class="cadastro-importadores">
         <div class="center-form">
               <div class="logo-h2">
@@ -43,5 +43,5 @@ export default function Cadimportadores() {
         </div>
       </div>
       `
-    );
+  );
 }

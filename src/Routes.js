@@ -1,45 +1,51 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
 import LoginPage from "./pages/loginPage/LoginPage.js";
 import CadastroImportadores from "./pages/cadImportadores/cad_Importadores.js";
-import ListarImportadores from "./pages/listaImportadores/Listaimportadores.js";
+import Importadores from "./pages/importadores/Importadores.js";
 
 export function Route() {
-    const mainContainer = document.getElementById("mainContainer");
-    const path = window.location.hash.substring(1);
-    switch (path) {
-        case "/wellcome":
-            new WellCome(mainContainer);
-            break;
+  const mainContainer = document.getElementById("mainContainer");
+  const path = window.location.hash.substring(1);
 
-        case "/":
-            alert("Bem-vindo à SIPROA!");
-            break;
+  ///// Rotas
+  switch (path) {
+    case "/wellcome":
+      new WellCome(mainContainer);
+      break;
 
-        case "/home":
+    case "/":
+      alert("Bem-vindo à SIPROA!");
+      break;
 
-            break;
+    case "/home":
 
-        case "/login":
-            new LoginPage(mainContainer);
-            break;
+      break;
 
-        case "/cadastro_importadores":
-            new CadastroImportadores(mainContainer);
-            break;
+    case "/login":
+      new LoginPage(mainContainer);
+      break;
 
-        case "/lista_importadores":
-            new ListarImportadores(mainContainer);
-            break;
+    case "/cadastro_importadores":
+      new CadastroImportadores(mainContainer);
+      break;
 
-        case "/vendas":
-            Vendas(mainContainer)
-            break;
-        default:
+    case "/lista_importadores":
 
-            break;
-    }
+      break;
+
+    case "/vendas":
+
+      break;
+    case "/importadores":
+      new Importadores(mainContainer);
+      break;
+      
+    default:
+
+      break;
+  }
 }
 
 export function Navigate(path) {
-    window.location.hash = path;
+  window.location.hash = path;
 }
