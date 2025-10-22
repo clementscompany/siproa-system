@@ -417,14 +417,18 @@ select {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid var(--color);
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .center-form {
-    padding: 10px;
-    border-radius: 4px;
+    padding: 20px;
+    border-radius: 6px;
     border: 1px solid var(--color);
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
 }
 
 .logo-h2 {
@@ -446,24 +450,21 @@ select {
 .cadastro-importadores form {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* duas colunas */
-    gap: 35px;
-    width: auto;
-    padding: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
-
-
-/* Faz os inputs ocuparem toda a coluna */
 
 .form-group {
     display: flex;
     flex-direction: column;
-    width: 510px;
+    width: 100%;
 }
 
 .form-group label {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 6px;
     font-weight: 500;
     color: #555;
@@ -477,6 +478,8 @@ select {
     font-size: 15px;
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -484,8 +487,17 @@ select {
     box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
 
-.submit-btn {
+.form-group-btn {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 100%;
     grid-column: 1 / -1;
+}
+
+.submit-btn {
+    width: 250px;
     padding: 12px;
     background-color: var(--color);
     color: var(--baseColor);
@@ -499,11 +511,27 @@ select {
 }
 
 .submit-btn:hover {
-    background-color: #357ab8;
+    background-color: var(--buttonHoverColor);
+    color: var(--buttonHoverTextColor);
 }
 
-@media (max-width: 600px) {
-    form {
+@media (max-width: 900px) {
+    .cadastro-importadores form {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
+    .form-group-btn {
+        justify-content: center;
+    }
+    .submit-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.lista-importadores {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

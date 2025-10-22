@@ -9,7 +9,7 @@ export default function Cadimportadores() {
         <form id="importerForm">
           <div class="form-group">
             <label for="codigoCliente">Código de Cliente</label>
-            <input type="text" id="codigoCliente" placeholder="Ex: 001">
+            <input type="text" id="codigoCliente" placeholder="Ex: 001, 01US/DSA">
           </div>
 
           <div class="form-group">
@@ -36,7 +36,9 @@ export default function Cadimportadores() {
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="exemplo@email.com">
          </div>
-         <button type="submit" class="submit-btn">Cadastrar Importador</button>
+         <div class="form-group-btn">
+          <button type="submit" class="submit-btn">Cadastrar Importador</button>
+         </div>
         </form>
         </div>
       </div>
