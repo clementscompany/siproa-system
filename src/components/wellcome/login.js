@@ -1,6 +1,6 @@
 export default function Login() {
-    return (
-        `
+  return (
+    `
         <div class="login-page" id="login">
             <form action="" class="form-login">
                 <div class="icons"><span><i class="bi bi-person"></i></span><h1>Login</h1></div>
@@ -29,5 +29,5 @@ export default function Login() {
             </div>
         </div>
         `
-    );
+  );
 }
