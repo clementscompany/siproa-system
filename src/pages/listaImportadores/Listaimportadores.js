@@ -6,7 +6,7 @@ class ListarImportadores {
         this.Init(mainContainer);
     }
     Init(mainContainer) {
-        mainContainer.innnerHTML = Listaimportadores();
+        mainContainer.innerHTML = Listaimportadores();
     }
 }
 

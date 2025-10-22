@@ -12,7 +12,7 @@ export function Route() {
             break;
 
         case "/":
-            alert("Bem-vindo à Gestão Aduaneira!");
+            alert("Bem-vindo à SIPROA!");
             break;
 
         case "/home":
