@@ -10,7 +10,7 @@ export default function WellCome(data) {
         </div>
         <!-- Botao para configuracao inicial do sistema -->
         <div class="btn-container">
-          <button id="configButton" class="startButton">Configuração Inicial</button>
+          <button id="configButton" class="btn btn-next">Configuração Inicial</button>
         </div>
       </div>
     </div>`
