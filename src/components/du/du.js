@@ -2,7 +2,7 @@ export default function DU(){
     return`
         <div class="container-du">
             <div class="header-section">
-                <h2>Processos</h2>
+                <h2><button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>Processos</h2>
                 <div class="search-part">
                     <input type="text" id="searchprocess" placeholder="Procurar Processo...">
                     <button class="search-btn" id="btn-search"><i class="bi bi-search"></i></button>

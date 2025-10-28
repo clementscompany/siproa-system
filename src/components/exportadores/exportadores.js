@@ -5,6 +5,7 @@ export default function exportadores() {
         <div class="center-form">
               <div class="logo-h2">
           <h2>Cadastro de Exportadores</h2>
+          <button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>
         </div>
         <form id="exportersForm">
           <div class="form-group">

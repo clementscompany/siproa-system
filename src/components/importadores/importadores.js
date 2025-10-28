@@ -3,9 +3,10 @@ export default function importadores() {
     `
       <div class="cadastro-importadores">
         <div class="center-form">
-              <div class="logo-h2">
-          <h2>Cadastro de Importador</h2>
-        </div>
+          <div class="logo-h2">
+            <h2>Cadastro de Importador</h2>
+            <button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>
+         </div>
         <form id="importerForm">
           <div class="form-group">
             <label for="codigoCliente">Código de Cliente</label>

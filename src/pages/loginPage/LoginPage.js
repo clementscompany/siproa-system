@@ -1,4 +1,6 @@
 import Login from "../../components/wellcome/login.js"
+import { Modal } from "../../components/modal/Modal.js";
+import { ValidateInput } from "../../utils/ValidateInput.js";
 
 class LoginPage {
   constructor(mainContainer) {
@@ -8,41 +10,41 @@ class LoginPage {
 
   Init(mainContainer) {
     mainContainer.innerHTML = Login();
-    this.loadmodal();
+    this.loadmodal(mainContainer);
   }
 
   loadmodal(mainContainer) {
-    const form = this.mainContainer.querySelector(".form-login");
-    const psswordfield = this.mainContainer.querySelector(".form-login .fields input[type='password']");
-    const tooglebtn = this.mainContainer.querySelector(".form-login .fields i");
-    const poperror = this.mainContainer.querySelector("#popup-erro");
-    const mensageErro = this.mainContainer.querySelector("#mensagem-erro");
-    const popsucesso = this.mainContainer.querySelector("#popup-sucesso");
-    const mensageSucess = this.mainContainer.querySelector("#mensagem-erro")
-    const fecharModalerror = this.mainContainer.querySelector("#fecharerro");
-    const btnsubmit = form.querySelector(".botao");
+    mainContainer.querySelector(".login-page")
+    const form = mainContainer.querySelector(".form-login")
+    const toggleBtn = mainContainer.querySelector('#togglePassword');
+    const psswordfield = mainContainer.querySelector('#password');
+    const btnsubmit = mainContainer.querySelector(".btnlogin");
+    const modalContainer = new Modal(mainContainer);
 
-    tooglebtn.onclick = ()=>{
-      if(psswordfield.type === "password"){
-        psswordfield.type = "text";
-        tooglebtn.classList.add('active')
-      }else{
-        psswordfield.type = "password";
-        tooglebtn.classList.remove('active');
-      }
-    }
-
-    fecharModalerror.addEventListener("click",()=>{
-      poperror.style.display = "none";
-    })
+    toggleBtn.addEventListener('click', () => {
+        if (psswordfield.type === 'password') {
+            psswordfield.type = 'text';
+            toggleBtn.classList.remove('bi-eye');
+            toggleBtn.classList.add('bi-eye-slash', 'active');
+            toggleBtn.setAttribute('aria-label', 'Ocultar senha');
+          }else {
+            psswordfield.type = 'password';
+            toggleBtn.classList.remove('bi-eye-slash', 'active');
+            toggleBtn.classList.add('bi-eye');
+            toggleBtn.setAttribute('aria-label', 'Mostrar senha');
+          }
+    });
 
     btnsubmit.addEventListener("click", (e) => {
       e.preventDefault();
-      const username = form.querySelector("#username");
-      const password = form.querySelector("#password");
-      if(username || password){
-        mensageErro.textContent = "Preenche Todos os Campos!";
-        poperror.style.display = "flex";
+      const username = form.querySelectorAll("#username");
+      const password = form.querySelectorAll("#password");
+      let isValid = ValidateInput(username,password)
+      if(!isValid){
+        modalContainer.showError("Preenche Todos os Campos","Aviso!");
+        return;
+      }else{
+        modalContainer.showLoader();
       }
     })
   }

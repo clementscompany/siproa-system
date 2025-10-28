@@ -2,10 +2,10 @@ export default function ListaExportadores(){
     return`
         <div class="Lista-Exportadores">
             <div class="header-section">
-                <h2>Lista de Exportadores</h2>
+                <h2><button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>Lista de Exportadores</h2>
                 <button class="add-btn" id="openFormBtn">+ Novo Exportador</button>
             </div>
-         <div class="table-container">
+         <div class="table-container-export">
             <table>
                 <thead>
                     <tr>

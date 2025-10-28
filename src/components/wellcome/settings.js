@@ -28,6 +28,10 @@ export default function ConfiguracaoInicial() {
             <input name="empresa_telefone" type="text" placeholder="Ex: +244 999 999 999">
           </div>
           <div class="form-group">
+            <label>Cédula</label>
+            <input name="empresa_cedula" type="text" placeholder="Ex: 344-554-ABC">
+          </div>
+          <div class="form-group">
             <label>Email</label>
             <input name="empresa_email" type="email" placeholder="empresa@email.com">
           </div>
