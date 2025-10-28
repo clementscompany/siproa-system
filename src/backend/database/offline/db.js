@@ -375,6 +375,22 @@ const CreateTable = () => {
   `;
   DB.run(logs_conta);
 
+  const empresas = `
+    CREATE TABLE IF NOT EXISTS empresas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      conta_id INTEGER,
+      nome TEXT,
+      nif TEXT,
+      endereco TEXT,
+      email TEXT,
+      telefone TEXT,
+      interno INT DEFAULT 0,
+      active INT DEFAULT 1,
+      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    );
+  `
+  DB.run(empresas);
+  
   console.log("Base de dados DU criada com sucesso com todas as tabelas!");
 };
 

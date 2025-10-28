@@ -1,3 +1,4 @@
+import { Api } from "../../api/Api.js";
 import { Modal } from "../../components/modal/Modal.js";
 import ConfiguracaoInicial from "../../components/wellcome/settings.js";
 import template from "../../components/wellcome/Wellcome.js";
@@ -56,13 +57,15 @@ class WellCome {
 
     cancelBtn.addEventListener("click", () => this.Init(mainContainer));
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      
+      const api = new Api();
       modalContainer.showLoader();
-      console.log(data);
-      
+
+      const result = await api.startConfig(data);
+      console.log(result);
+
     });
 
     updateStep();
