@@ -1,5 +1,6 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
 import LoginPage from "./pages/loginPage/LoginPage.js";
+import HomePage from "./pages/homepage/HomePage.js";
 import Importadores from "./pages/importadores/Importadores.js";
 import ListaDeImportadores from "./pages/listaImportadorees/ListaImportadores.js";
 import Exportadores from "./pages/exportadores/Exportadores.js";
@@ -10,6 +11,7 @@ import AgruparPosicoes from "./pages/duposicoes/Duposicoes.js";
 import ReqFundos from "./pages/reqfundos/Reqfundos.js";
 import DuAdicoes from "./pages/duAdicoes/DuAdicoes.js";
 import ArquivosProcessos from "./pages/arquivos/Arquivos.js";
+import ListaPaises from "./pages/paises/PaisesTable.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -25,7 +27,7 @@ export function Route() {
       break;
 
     case "/home":
-
+      new HomePage(mainContainer);
       break;
 
     case "/login":
@@ -57,6 +59,9 @@ export function Route() {
       break;
     case"/posicoes":
       new AgruparPosicoes(mainContainer);
+      break;
+    case"/paises":
+      new ListaPaises(mainContainer);
       break;
       
     case"/requisicao_fundos":
