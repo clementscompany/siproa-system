@@ -73,3 +73,4 @@ class WellCome {
 }
 
 export default WellCome;
+
