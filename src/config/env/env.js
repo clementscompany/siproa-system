@@ -1,1 +1,1 @@
-export const AppUrl = { server:"http://localhost:3000" }
+export const AppUrl = { server: "http://localhost:3000" }

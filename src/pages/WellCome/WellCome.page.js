@@ -2,6 +2,8 @@ import { Api } from "../../api/Api.js";
 import { Modal } from "../../components/modal/Modal.js";
 import ConfiguracaoInicial from "../../components/wellcome/settings.js";
 import template from "../../components/wellcome/Wellcome.js";
+import { AppUrl } from "../../config/env/env.js";
+import { Navigate } from "../../Routes.js";
 import { ValidateInput } from "../../utils/ValidateInput.js";
 
 class WellCome {
@@ -10,10 +12,33 @@ class WellCome {
     this.Init(this.mainContainer);
   }
 
-  Init(mainContainer) {
-    mainContainer.innerHTML = template();
-    const configButton = mainContainer.querySelector("#configButton");
-    configButton.addEventListener("click", () => this.settings(mainContainer));
+  async Init(mainContainer) {
+    const modalContainer = new Modal(mainContainer);
+
+    try {
+      const api = new Api(AppUrl.server);
+      modalContainer.showLoader()
+
+      const result = await api.get("/config/get");
+
+
+      if (!result.success) {
+        setTimeout(() => {
+          modalContainer.close();
+          mainContainer.innerHTML = template();
+          const configButton = mainContainer.querySelector("#configButton");
+          configButton.addEventListener("click", () => this.settings(mainContainer));
+          return;
+        }, 1000)
+      }
+
+      setTimeout(() => {
+        Navigate("/login");
+      }, 1000)
+
+    } catch (error) {
+      modalContainer.showError("Erro ao buscar configuração", "Erro");
+    }
   }
 
   settings(mainContainer) {
@@ -58,19 +83,33 @@ class WellCome {
     cancelBtn.addEventListener("click", () => this.Init(mainContainer));
 
     form.addEventListener("submit", async (e) => {
+      modalContainer.showLoader();
       e.preventDefault();
       const data = new FormData(form);
-      const api = new Api();
-      modalContainer.showLoader();
 
-      const result = await api.startConfig(data);
-      console.log(result);
+      const httpRequest = new Api(AppUrl.server);
 
+      const result = await httpRequest.startConfig(data);
+
+      if (!result.success) {
+        setTimeout(() => {
+          modalContainer.showError(result.message, "Erro");
+        }, 1000);
+        return;
+      }
+      setTimeout(() => {
+        modalContainer.showSuccess(result.message, "Sucesso", true);
+      }, 1000);
+
+      setTimeout(() => {
+        this.Init(mainContainer);
+      }, 2000);
     });
 
     updateStep();
   }
 }
-
 export default WellCome;
+
+
 

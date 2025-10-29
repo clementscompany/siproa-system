@@ -1,7 +1,7 @@
-import { AppUrl } from "../config/env/env.js";
+
 class Api {
-  constructor() {
-    this.AppUrl = AppUrl;
+  constructor(api) {
+    this.AppUrl = api;
   }
 
   ///// start config 
@@ -9,10 +9,7 @@ class Api {
     try {
       const response = await fetch(this.AppUrl + "/config/start", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: data,
       });
       const result = await response.json();
       return result;
@@ -21,6 +18,7 @@ class Api {
       throw error;
     }
   }
+  
 
   async get(uri) {
     try {

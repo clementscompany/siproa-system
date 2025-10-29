@@ -384,13 +384,42 @@ const CreateTable = () => {
       endereco TEXT,
       email TEXT,
       telefone TEXT,
+      cedula TEXT,
       interno INT DEFAULT 0,
       active INT DEFAULT 1,
-      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
   `
   DB.run(empresas);
-  
+
+  // ================================
+  // CONFIGURAÇÕES DO SISTEMA
+  // ================================
+
+  const config = `
+    CREATE TABLE IF NOT EXISTS config (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      empresa_nome TEXT,
+      empresa_nif TEXT,
+      empresa_endereco TEXT,
+      empresa_telefone TEXT,
+      empresa_cedula TEXT,
+      empresa_email TEXT,
+      admin_usuario TEXT,
+      admin_email TEXT,
+      admin_senha TEXT,
+      admin_confirmar TEXT,
+      moeda_padrao TEXT,
+      taxa_cambio REAL,
+      unidade_padrao TEXT,
+      tema TEXT,
+      idioma TEXT,
+      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  DB.run(config);
+
   console.log("Base de dados DU criada com sucesso com todas as tabelas!");
 };
 
