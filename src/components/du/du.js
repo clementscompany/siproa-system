@@ -1,18 +1,18 @@
 export default function DU(){
     return`
-        <div class="container-du">
-            <div class="header-section">
-                <h2><button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>Processos</h2>
+        <div class="table-list">
+            <div class="top-bar">
+                <button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>
                 <div class="search-part">
                     <input type="text" id="searchprocess" placeholder="Procurar Processo...">
                     <button class="search-btn" id="btn-search"><i class="bi bi-search"></i></button>
                 </div>
-                <button class="add-btn" id="openFormBtn">+ Novo Processo</button>
+                <h2>Processos</h2>
             </div>
-            <div class="table-container-du">
-              <table>
-                <thead>
-                    <tr>
+            <div class="table-container-list">
+                <table>
+                    <thead>
+                          <tr>
                          <th>Conta nº</th>
                          <th>Importador</th>
                          <th>Regime</th>
@@ -28,9 +28,9 @@ export default function DU(){
                          <th>Data</th>
                          <th>Abrir Processo</th>
                     </tr>
-                </thead>
-                <tbody id="tabelaImportadores">
-                    <tr>
+                    </thead>
+                    <tbody id="tabelaImportadores">
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -44,9 +44,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr>
-                    <tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -60,9 +60,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr>
-                    <tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -76,8 +76,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -91,8 +92,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -106,8 +108,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -121,8 +124,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -136,8 +140,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -151,8 +156,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -166,8 +172,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -181,8 +188,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -196,8 +204,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -211,8 +220,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -226,8 +236,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -241,8 +252,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -256,8 +268,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -271,8 +284,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -286,8 +300,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -301,8 +316,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -316,8 +332,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -331,8 +348,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -346,8 +364,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                          <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -361,8 +380,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -376,8 +396,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -391,8 +412,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                        <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -406,8 +428,9 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr><tr>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
                          <td>Ang004</td>
                          <td>JoãoDa Cruz</td>
                          <td>11</td>
@@ -421,18 +444,32 @@ export default function DU(){
                          <td>DDA-SSS</td>
                          <td>CAA-SSD-AA</td>
                          <td>00/00/0000</td>
-                         <td><i class="bi bi-folder2-open"></i></td>
-                    </tr>
-                </tbody>
-              </table>
-           </div>
-           <div id="popup-erro" class="modal'">
-            <div class="modal-content">
-                <h2>Aviso!</h2>
-                <p id="mensagem-erro">Usuário não Encontrado!</p>
-                <button id="fecharerro">Fechar</button>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                       <tr>
+                         <td>Ang004</td>
+                         <td>JoãoDa Cruz</td>
+                         <td>11</td>
+                         <td>Augusto Silva</td>
+                         <td>00/00/0000</td>
+                         <td>0,000</td>
+                         <td>0,000</td>
+                         <td>0,000</td>
+                         <td>0,000</td>
+                         <td>0,000</td>
+                         <td>DDA-SSS</td>
+                         <td>CAA-SSD-AA</td>
+                         <td>00/00/0000</td>
+                         <td style="text-align:center;color:var(--color); font-size:1.2em;"><i class="bi bi-folder2-open"></i></td>
+                       </tr>
+                    
+                    </tbody>
+                </table>
             </div>
-        </div>
+                <!-- Botão no rodapé -->
+                <div class="bottom-bar">
+                    <button class="add-btn" id="openFormBtn">+ Novo Processo</button>
+                </div>
         </div>
     `;
 }

@@ -46,6 +46,37 @@ export class Modal {
     this.mainContainer.appendChild(this.modalElement);
   }
 
+  showSuccess(message, title = "Sucesso", hideButton = false) {
+    if (this.modalElement) this.close();
+
+    this.modalElement = document.createElement("div");
+    this.modalElement.className = "modal-overlay";
+    this.modalElement.innerHTML = `
+      <div class="modal-window">
+        <div class="modal-header">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>${title}</span>
+        </div>
+        <div class="modal-body">
+          <p>${message}</p>
+        </div>
+        <div class="modal-footer">
+          ${hideButton ? "" : "<button class='btn-ok'>OK</button>"}
+        </div>
+      </div>
+    `;
+
+    this.mainContainer.appendChild(this.modalElement);
+    this.modalElement.querySelector(".btn-ok").addEventListener("click", () => this.close());
+    this.modalElement.addEventListener("click", (e) => {
+      if (e.target === this.modalElement) this.close();
+    });
+  }
+
+  hideLoader() {
+    this.close();
+  }
+
   close() {
     if (this.modalElement) {
       this.modalElement.remove();
