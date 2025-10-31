@@ -1,48 +1,55 @@
 export default function importadores() {
   return (
     `
-      <div class="cadastro-importadores">
-        <div class="center-form">
-          <div class="logo-h2">
-            <h2>Cadastro de Importador</h2>
-            <button class="btn-voltar"><i class="bi bi-arrow-left-circle"></i> Voltar</button>
-         </div>
-        <form id="importerForm">
-          <div class="form-group">
-            <label for="codigoCliente">Código de Cliente</label>
-            <input type="text" id="codigoCliente" placeholder="Ex: 001, 01US/DSA">
-          </div>
+       <div class="cadastro-container-partilhado">
+  <div class="center-form">
+    <div class="header-form">
+      <h2>Cadastro de Importadores</h2>
+      <button class="btn-voltar">
+        <i class="bi bi-arrow-left-circle"></i> Voltar
+      </button>
+    </div>
 
-          <div class="form-group">
-            <label for="nomeImportador">Nome do Importador</label>
-            <input type="text" id="nomeImportador" placeholder="Nome completo">
-         </div>
-
-         <div class="form-group">
-          <label for="endereco">Endereço</label>
-          <input type="text" id="endereco" placeholder="Rua, nº, Bairro, Cidade">
-         </div>
-
-         <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" id="telefone" placeholder="+244 9XX XXX XXX">
-         </div>
-
-         <div class="form-group">
-          <label for="codigoEstatico">Código Estático</label>
-          <input type="text" id="codigoEstatico" placeholder="Ex: IMP-2025">
-         </div>
-
-         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="exemplo@email.com">
-         </div>
-         <div class="form-group-btn">
-          <button type="submit" class="submit-btn">Cadastrar Importador</button>
-         </div>
-        </form>
+    <form id="exportersForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="codigoCliente">Código Cliente</label>
+          <input type="text" id="codigoCliente" placeholder="Ex: 001, 01US/DSA">
         </div>
+
+        <div class="form-group">
+          <label for="nomeExportador">Nome do Importador</label>
+          <input type="text" id="nomeImportador" placeholder="Nome completo">
+        </div>
+
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" placeholder="Rua, nº, Bairro">
+        </div>
+
+        <div class="form-group">
+          <label for="cidade">Telefone</label>
+          <input type="text" id="cidade" placeholder="Ex: Cabinda">
+        </div>
+
+        <div class="form-group">
+          <label for="paisExp">Código Estático</label>
+          <input type="text" id="" placeholder="Ex: ##$%-667-???">
+        </div>
+
+        <div class="form-group">
+          <label for="nomeEntidade">Email</label>
+          <input type="email" id="emailimp" placeholder="siproa2025@gmail.com">
+        </div>
+
       </div>
+
+      <div class="form-group-btn">
+        <button type="submit" class="submit-btn">Cadastrar Exportador</button>
+      </div>
+    </form>
+  </div>
+</div>
       `
   );
 }

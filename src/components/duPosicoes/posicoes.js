@@ -7,15 +7,14 @@ export default function agruparPosicoes(){
                     <button class="btn-cancelar-posicoes">Cancelar</button>
                 </div>
             </div>
-            <div class="container-first-positions-group">
-                    <h2>Inserção de Posições</h2>
-                <div class="artigo-form">
+            <div class="artigo-form">
                     <input type="number" id="artigoPautal" placeholder="Artigo Pautal">
                     <input type="number" id="valorFOB" placeholder="Valor FOB (opcional)">
                     <input type="number" id="quantidade" placeholder="Quantidade" value="1" min="1">
                     <button id="adicionarArtigo">Adicionar Artigo</button>
-                </div>
-
+            </div>
+            <div class="container-first-positions-group">
+                <h2>Inserção de Posições</h2>
                 <table id="tabelaArtigos">
                     <thead>
                         <tr>
@@ -45,8 +44,6 @@ export default function agruparPosicoes(){
                                 <th>Artigo Pautal</th>
                                 <th>Descrição</th>
                                 <th>Quantidade Total</th>
-                                <th>Total FOB</th>
-                                <th>Total FOB</th>
                                 <th>Total FOB</th>
                             </tr>
                         </thead>
