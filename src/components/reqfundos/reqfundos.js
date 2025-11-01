@@ -16,7 +16,7 @@ export default function reqFundos(){
         </div>
 
         <div class="buttons-req-fundos-top">
-          <button id="lastReq"><i class="bi bi-clock-history"></i> Última</button>
+          <button id="lastReq"><i class="bi bi-clock-history"></i>Relatório</button>
           <button id="updateReq"><i class="bi bi-arrow-repeat"></i> Actualizar</button>
           <button id="newReq"><i class="bi bi-plus-circle"></i> Nova</button>
         </div>

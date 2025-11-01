@@ -12,6 +12,7 @@ import ReqFundos from "./pages/reqfundos/Reqfundos.js";
 import DuAdicoes from "./pages/duAdicoes/DuAdicoes.js";
 import ArquivosProcessos from "./pages/arquivos/Arquivos.js";
 import ListaPaises from "./pages/paises/PaisesTable.js";
+import Fatura from "./pages/fatura/Fatura.js";
 export function Route() {
   const mainContainer = document.getElementById("mainContainer");
   const path = window.location.hash.substring(1);
@@ -75,6 +76,10 @@ export function Route() {
     case"/arquivos":
       new ArquivosProcessos(mainContainer);
     break;
+
+    case"/fatura":
+     new Fatura(mainContainer);
+     break;
     default:
 
       break;
