@@ -2558,6 +2558,7 @@ h5 {
 .table-fatura .dados-principais td,
 .tabela-bloco td,
 .tabela-bloco th {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border: 1px solid var(--borderColor);
   padding: 8px;
 }
@@ -2566,7 +2567,7 @@ h5 {
   padding: 4px;
   background-color: var(--baseColorMuted);
   text-align: left;
-  width: 30%;
+  width: 20%;
 }
 
 .table-fatura .tabela-bloco th {
@@ -2603,46 +2604,3 @@ h5 {
   border-top: 2px solid var(--border);
   padding-top: 10px;
 }
-
-/*
-
-    .dados-principais th {
-      background-color: var(--baseColorMuted);
-      text-align: left;
-      width: 30%;
-    }
-
-    .tabela-bloco th {
-      background: var(--baseColorSoft);
-      text-align: left;
-    }
-
-    .subtotal {
-      text-align: right;
-      font-weight: 600;
-      color: var(--error);
-    }
-
-    .total-geral {
-      text-align: right;
-      font-weight: bold;
-      color: var(--error);
-      border: 2px solid var(--error);
-      padding: 10px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    .assinatura {
-      margin-top: 60px;
-      text-align: right;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      text-align: center;
-      color: var(--textColor2);
-      border-top: 2px solid var(--border);
-      padding-top: 10px;
-    }*/
