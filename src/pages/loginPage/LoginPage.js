@@ -1,16 +1,41 @@
 import Login from "../../components/wellcome/login.js"
 import { Modal } from "../../components/modal/Modal.js";
 import { ValidateInput } from "../../utils/ValidateInput.js";
+import { Api } from "../../api/Api.js";
+import { AppUrl } from "../../config/env/env.js";
+import { Navigate } from "../../Routes.js";
 
 class LoginPage {
   constructor(mainContainer) {
     this.mainContainer = mainContainer;
+    this.api = new Api(AppUrl.server);
     this.Init(mainContainer);
   }
 
-  Init(mainContainer) {
+  async Init(mainContainer) {
     mainContainer.innerHTML = Login();
+    await this.loadAdmins();
     this.loadmodal(mainContainer);
+  }
+
+  async loadAdmins() {
+    try {
+      const response = await this.api.get("/admins");
+      if (response.success && response.data) {
+        const adminSelect = this.mainContainer.querySelector('#adminUsername');
+        if (adminSelect) {
+          adminSelect.innerHTML = '<option value="">Selecione um admin</option>';
+          response.data.forEach(admin => {
+            const option = document.createElement('option');
+            option.value = admin.username;
+            option.textContent = admin.nome || admin.username;
+            adminSelect.appendChild(option);
+          });
+        }
+      }
+    } catch (error) {
+      console.error("Erro ao carregar admins:", error);
+    }
   }
 
   loadmodal(mainContainer) {
@@ -45,9 +70,10 @@ class LoginPage {
       if (!isValid) {
         modalContainer.showError("Preenche Todos os Campos", "Aviso!");
         return;
-      } else {
-        modalContainer.showLoader();
       }
+
+      modalContainer.showLoader();
+      
     });
 
     // Funcionalidade da Sidebar de Admin
@@ -94,7 +120,7 @@ class LoginPage {
     // Botão de submit do login admin
     const adminLoginBtn = adminLoginForm.querySelector('.btnlogin');
     if (adminLoginBtn) {
-      adminLoginBtn.addEventListener('click', (e) => {
+      adminLoginBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         const adminUsername = mainContainer.querySelector('#adminUsername');
         const adminPassword = mainContainer.querySelector('#adminPassword');
@@ -102,9 +128,73 @@ class LoginPage {
         if (!adminUsername.value || !adminPassword.value) {
           modalContainer.showError("Preenche Todos os Campos", "Aviso!");
           return;
-        } else {
-          modalContainer.showLoader();
-          // Aqui você pode adicionar a lógica de autenticação do admin
+        }
+
+        modalContainer.showLoader();
+
+        try {
+          // Verifica se o admin tem senha cadastrada
+          const checkResult = await this.api.post("/login/check-password", { username: adminUsername.value });
+
+          if (!checkResult.hasPassword) {
+            modalContainer.hideLoader();
+            // Mostra modal para criar senha
+            modalContainer.showPasswordModal(async ({ newPassword, confirmPassword }) => {
+              modalContainer.showLoader();
+              try {
+                const createResult = await this.api.post("/login/create-password", {
+                  username: adminUsername.value,
+                  senha: newPassword,
+                  senhaConfirmacao: confirmPassword
+                });
+
+                modalContainer.hideLoader();
+
+                if (createResult.success) {
+                  modalContainer.showSuccess("Senha cadastrada com sucesso!", "Sucesso!");
+                  adminPasswordField.value = newPassword;
+                } else {
+                  modalContainer.showError(createResult.message || "Erro ao cadastrar senha", "Erro!");
+                }
+              } catch (error) {
+                modalContainer.hideLoader();
+                modalContainer.showError("Erro ao cadastrar senha", "Erro!");
+              }
+            });
+            return;
+          }
+
+          // Se tem senha, faz login
+          const loginResult = await this.api.post("/login", {
+            username: adminUsername.value,
+            senha: adminPassword.value
+          });
+
+          modalContainer.hideLoader();
+
+          if (loginResult.success) {
+            // Salvar sessão do usuário
+            sessionStorage.setItem('user', JSON.stringify({
+              id: loginResult.data.id,
+              username: loginResult.data.username,
+              nome: loginResult.data.nome,
+              perfil: loginResult.data.perfil,
+              loginTime: new Date().toISOString()
+            }));
+
+            modalContainer.showSuccess(`Login realizado com sucesso! Bem-vindo, ${loginResult.data.nome}!`, "Sucesso!");
+
+            // Redirecionar para home após 1 segundo
+            setTimeout(() => {
+              Navigate("/home");
+            }, 1000);
+          } else {
+            modalContainer.showError(loginResult.message || "Credenciais inválidas", "Erro!");
+          }
+        } catch (error) {
+          modalContainer.hideLoader();
+          modalContainer.showError("Erro ao realizar login", "Erro!");
+          console.error("Login error:", error);
         }
       });
     }

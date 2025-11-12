@@ -53,7 +53,9 @@ export default function Login() {
               <label for="adminUsername">
                 <i class="bi bi-person"></i> Usuario Admin
               </label>
-              <input type="text" id="adminUsername" placeholder="Digite o usuário admin" />
+              <select id="adminUsername">
+                <option value="">Selecione um admin</option>
+              </select>
             </div>
             <div class="fields password-field">
               <label for="adminPassword">

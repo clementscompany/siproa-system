@@ -1,5 +1,6 @@
 import WellCome from "./pages/WellCome/WellCome.page.js";
 import LoginPage from "./pages/loginPage/LoginPage.js";
+import Home from "./pages/home/Home.js";
 import HomePage from "./pages/homepage/HomePage.js";
 import Importadores from "./pages/importadores/Importadores.js";
 import ListaDeImportadores from "./pages/listaImportadorees/ListaImportadores.js";
@@ -27,21 +28,33 @@ export function Route() {
       break;
 
     case "/home":
-      new HomePage(mainContainer);
+      // Check if user is logged in
+      const userSession = sessionStorage.getItem('user');
+      if (!userSession) {
+        Navigate("/login");
+        break;
+      }
+      new Home(mainContainer);
       break;
 
     case "/login":
+      // If already logged in, redirect to home
+      const loggedUser = sessionStorage.getItem('user');
+      if (loggedUser) {
+        Navigate("/home");
+        break;
+      }
       new LoginPage(mainContainer);
       break;
-    
-     case "/importadores":
+
+    case "/importadores":
       new Importadores(mainContainer);
       break;
- 
+
     case "/lista_importadores":
       new ListaDeImportadores(mainContainer);
       break;
-    
+
     case "/exportadores":
       new Exportadores(mainContainer);
       break;
@@ -49,32 +62,32 @@ export function Route() {
     case "/lista_exportadores":
       new ListaDeExportadores(mainContainer);
       break;
-    
+
     case "/processos":
       new DocumentoUnico(mainContainer);
       break;
-    
+
     case "/formulario_processo":
       new FormDU(mainContainer);
       break;
-    case"/posicoes":
+    case "/posicoes":
       new AgruparPosicoes(mainContainer);
       break;
-    case"/paises":
+    case "/paises":
       new ListaPaises(mainContainer);
       break;
-      
-    case"/requisicao_fundos":
-     new ReqFundos(mainContainer);
-    break;
 
-    case"/adicoes":
-     new DuAdicoes(mainContainer);
-    break;
+    case "/requisicao_fundos":
+      new ReqFundos(mainContainer);
+      break;
 
-    case"/arquivos":
+    case "/adicoes":
+      new DuAdicoes(mainContainer);
+      break;
+
+    case "/arquivos":
       new ArquivosProcessos(mainContainer);
-    break;
+      break;
     default:
 
       break;

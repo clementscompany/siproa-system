@@ -21,22 +21,19 @@ class WellCome {
 
       const result = await api.get("/config/get");
 
+      modalContainer.hideLoader();
 
       if (!result.success) {
-        setTimeout(() => {
-          modalContainer.close();
-          mainContainer.innerHTML = template();
-          const configButton = mainContainer.querySelector("#configButton");
-          configButton.addEventListener("click", () => this.settings(mainContainer));
-          return;
-        }, 1000)
+        mainContainer.innerHTML = template();
+        const configButton = mainContainer.querySelector("#configButton");
+        configButton.addEventListener("click", () => this.settings(mainContainer));
+        return;
       }
 
-      setTimeout(() => {
-        Navigate("/login");
-      }, 1000)
+      Navigate("/login");
 
     } catch (error) {
+      modalContainer.hideLoader();
       modalContainer.showError("Erro ao buscar configuração", "Erro");
     }
   }
